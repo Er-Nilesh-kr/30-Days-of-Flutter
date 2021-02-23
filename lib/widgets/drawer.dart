@@ -30,7 +30,7 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Home",
-                textScaleFactor: 1.3,
+                textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -43,7 +43,7 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Profile",
-                textScaleFactor: 1.3,
+                textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -56,7 +56,7 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Contact",
-                textScaleFactor: 1.3,
+                textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
                 ),
