@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Model/catalog.dart';
-import 'package:myapp/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -15,9 +14,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -26,16 +25,15 @@ class HomeDetailPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
-                  ),
+                  backgroundColor:
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
               child: "Add to cart".text.make(),
             ).wh(120, 50)
           ],
-        ).p32(),
+        ).p24(),
       ),
       body: SafeArea(
         bottom: false,
@@ -51,23 +49,24 @@ class HomeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(context.theme.accentColor)
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesen.dolor sit amet, consectetur"
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa hic possimus quam reiciendis quisquam quae quia maxime mollitia officiis, suscipit, debitis neque voluptate illum asperiores. Repudiandae impedit possimus rem modi."
                         .text
                         .textStyle(context.captionStyle)
                         .make()
-                        .p20(),
+                        .py16()
+                        .px24(),
                   ],
-                ).py64(),
+                ).py32(),
               ),
             ))
           ],
