@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Model/catalog.dart';
+import 'package:myapp/widgets/home_widgets/add_to_cart.dart';
+import 'package:myapp/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -11,9 +13,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
         color: context.cardColor,
@@ -22,18 +22,11 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(context.theme.buttonColor),
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  )),
-              child: "Add to cart".text.make(),
+            AddToCart(
+              catalog: catalog,
             ).wh(120, 50)
           ],
-        ).p24(),
+        ).p32(),
       ),
       body: SafeArea(
         bottom: false,
@@ -54,17 +47,17 @@ class HomeDetailPage extends StatelessWidget {
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(context.theme.accentColor)
+                        .color(context.accentColor)
                         .bold
-                        .make(),
+                        .make()
+                        .py4(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
-                    10.heightBox,
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa hic possimus quam reiciendis quisquam quae quia maxime mollitia officiis, suscipit, debitis neque voluptate illum asperiores. Repudiandae impedit possimus rem modi."
+                    14.heightBox,
+                    "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita."
                         .text
                         .textStyle(context.captionStyle)
                         .make()
-                        .py16()
-                        .px24(),
+                        .px20()
                   ],
                 ).py32(),
               ),
