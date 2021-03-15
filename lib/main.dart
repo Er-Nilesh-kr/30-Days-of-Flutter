@@ -4,9 +4,10 @@ import 'package:myapp/pages/home_page.dart';
 import 'package:myapp/pages/login_page.dart';
 import 'package:myapp/utils/routes.dart';
 import 'package:myapp/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: null, child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
